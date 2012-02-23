@@ -1,0 +1,35 @@
+[Defines]
+	DEC_SPECIFICATION              = 0x00010005
+	PACKAGE_NAME                   = ShEfiPkg
+	PACKAGE_GUID                   = AA3865E8-7F30-4f59-8696-99F560101852
+	PACKAGE_VERSION                = 0.1
+
+[Includes]
+	Include
+
+[LibraryClasses]
+#	BltLib|Include/Library/BltLib.h
+
+[Guids]
+#	gOptionRomPkgTokenSpaceGuid = { 0x1e43298f, 0x3478, 0x41a7, { 0xb5, 0x77, 0x86, 0x6, 0x46, 0x35, 0xc7, 0x28 } }
+
+[PcdsFeatureFlag]
+#	gOptionRomPkgTokenSpaceGuid.PcdSupportScsiPassThru|TRUE|BOOLEAN|0x00010001
+#	gOptionRomPkgTokenSpaceGuid.PcdSupportExtScsiPassThru|TRUE|BOOLEAN|0x00010002
+#	gOptionRomPkgTokenSpaceGuid.PcdSupportGop|TRUE|BOOLEAN|0x00010004
+#	gOptionRomPkgTokenSpaceGuid.PcdSupportUga|TRUE|BOOLEAN|0x00010005
+
+[PcdsFixedAtBuild, PcdsPatchableInModule]
+#	gOptionRomPkgTokenSpaceGuid.PcdDriverSupportedEfiVersion|0x0002000a|UINT32|0x00010003
+
+
+[Protocols]
+	gEfiTianoDecompressProtocolGuid = { 0xE84CF29C, 0x191F, 0x4EAE, {0x96, 0xE1, 0xF4, 0x6A, 0xEC, 0xEA, 0xEA, 0x0B} }
+	gEfiDebugPortProtocolGuid       = { 0xEBA4E8D2, 0x3858, 0x41EC, {0xA2, 0x81, 0x26, 0x47, 0xBA, 0x96, 0x60, 0xD0} }
+
+	## IntelFrameworkPkg/Include/Protocol/LegacyBios.h
+	gEfiLegacyBiosProtocolGuid      = { 0xdb9a1e3d, 0x45cb, 0x4abb, { 0x85, 0x3b, 0xe5, 0x38, 0x7f, 0xdb, 0x2e, 0x2d }}
+	
+	## IntelFrameworkPkg/Include/Protocol/Legacy8259.h
+	gEfiLegacy8259ProtocolGuid     = { 0x38321dba, 0x4fe0, 0x4e17, { 0x8a, 0xec, 0x41, 0x30, 0x55, 0xea, 0xed, 0xc1 }}
+

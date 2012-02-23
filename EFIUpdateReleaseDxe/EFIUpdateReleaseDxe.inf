@@ -1,0 +1,21 @@
+[Defines]
+	INF_VERSION                    = 0x00010005
+	BASE_NAME                      = EFIUpdateReleaseDxe
+	FILE_GUID                      = b9a99ac1-cfda-48c2-a0ba-4c26387928f6
+	MODULE_TYPE                    = DXE_RUNTIME_DRIVER
+	VERSION_STRING                 = 1.0
+	ENTRY_POINT                    = DxeMain
+
+[Sources]
+	EFIUpdateReleaseDxe.c
+	
+
+[Packages]
+	MdePkg/MdePkg.dec
+	MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+	UefiDriverEntryPoint
+  
+[Depex]
+	TRUE

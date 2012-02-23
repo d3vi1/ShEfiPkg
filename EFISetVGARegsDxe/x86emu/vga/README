@@ -1,0 +1,32 @@
+James Mckenzie, May 2006.
+
+This is a horrible hack.
+
+Just before elilo calls into the kernel it calls vga_init
+and passes a pointer to the kernels parameter table.
+
+vga_init does the following:
+
+1) search through the RAM (from the compressed EFI firmware rom)
+   for the intel VGA bios.
+2) setup a real mode x86 emulator and copy the rom into 0xc0000 in 
+   the emulator, trap all the interrupt vectors in the emulator
+   to stop the VGA bios trying to call the system bios.
+3) execute the VGA bios rom. The VGA bios rom reads the EDID information
+   from the monitor and modifies! itself.
+4) tell the ICH7 chipset to map RW memory at 0xc0000, and to point 
+   0xa0000 to the video card.
+5) copy the interrupt vectors (specifically int 0x10), the BIOS parameter 
+   table, and the ROM from the emulator into real memory.
+6) in the emulator execute code equivalent to the linux kernel's video.S
+   and set the boot parameters accordingly
+7) transfer control back to the kernel.
+
+Thanks to Matthew Garrett, whose work with vbetool this 
+builds on.
+
+To get this to work, you need to apply the patches in the patches directory.
+The first to elilo which links this code in, and the second to the kernel
+which tells it to use the legacy VGA mode even in the presence of EFI.
+
+

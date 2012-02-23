@@ -1,0 +1,24 @@
+[Defines]
+	INF_VERSION                    = 0x00010005
+	BASE_NAME                      = EFIInstallEdidOverride
+	FILE_GUID                      = a3ac58a6-bae9-44ba-a17c-07c386705b0b
+	MODULE_TYPE                    = DXE_DRIVER
+	VERSION_STRING                 = 1.0
+	ENTRY_POINT                    = DxeMain
+
+[Sources]
+	EFIInstallEdidOverride.c
+
+[Packages]
+	MdePkg/MdePkg.dec
+	MdeModulePkg/MdeModulePkg.dec
+	ShEfiPkg/ShEfiPkg.dec
+
+[LibraryClasses]
+	UefiLib
+	UefiDriverEntryPoint
+
+[Protocols]
+	gEfiEdidOverrideProtocolGuid           #PRODUCES
+
+[Guids]
