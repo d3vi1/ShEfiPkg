@@ -6,11 +6,320 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		E59938AC14F72CB30040DA47 /* EFIInstallEdidOverride.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = EFIInstallEdidOverride.c; sourceTree = "<group>"; };
+		E59938AD14F72CB30040DA47 /* EFIInstallEdidOverride.inf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFIInstallEdidOverride.inf; sourceTree = "<group>"; };
+		E59938AF14F72CB30040DA47 /* EFISetVGARegs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = EFISetVGARegs.c; sourceTree = "<group>"; };
+		E59938B014F72CB30040DA47 /* EFISetVGARegs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFISetVGARegs.h; sourceTree = "<group>"; };
+		E59938B114F72CB30040DA47 /* EFISetVGARegs.inf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFISetVGARegs.inf; sourceTree = "<group>"; };
+		E59938B214F72CB30040DA47 /* FirmwareVolume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirmwareVolume.h; sourceTree = "<group>"; };
+		E59938B414F72CB30040DA47 /* DevicePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevicePath.h; sourceTree = "<group>"; };
+		E59938B514F72CB30040DA47 /* DevicePathToText.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DevicePathToText.c; sourceTree = "<group>"; };
+		E59938B614F72CB30040DA47 /* DevicePathToText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevicePathToText.h; sourceTree = "<group>"; };
+		E59938B714F72CB30040DA47 /* EFISetVGARegsDxe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = EFISetVGARegsDxe.c; sourceTree = "<group>"; };
+		E59938B814F72CB30040DA47 /* EFISetVGARegsDxe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFISetVGARegsDxe.h; sourceTree = "<group>"; };
+		E59938B914F72CB30040DA47 /* EFISetVGARegsDxe.inf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFISetVGARegsDxe.inf; sourceTree = "<group>"; };
+		E59938BA14F72CB30040DA47 /* FirmwareVolume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirmwareVolume.h; sourceTree = "<group>"; };
+		E59938BB14F72CB30040DA47 /* ShadowOptionRom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShadowOptionRom.c; sourceTree = "<group>"; };
+		E59938BC14F72CB30040DA47 /* ShadowOptionRom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowOptionRom.h; sourceTree = "<group>"; };
+		E59938BE14F72CB30040DA47 /* debug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = debug.c; sourceTree = "<group>"; };
+		E59938BF14F72CB30040DA47 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
+		E59938C014F72CB30040DA47 /* fpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fpu.c; sourceTree = "<group>"; };
+		E59938C114F72CB30040DA47 /* ops.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ops.c; sourceTree = "<group>"; };
+		E59938C214F72CB30040DA47 /* ops2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ops2.c; sourceTree = "<group>"; };
+		E59938C314F72CB30040DA47 /* prim_ops.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prim_ops.c; sourceTree = "<group>"; };
+		E59938C414F72CB30040DA47 /* sys.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sys.c; sourceTree = "<group>"; };
+		E59938C514F72CB30040DA47 /* validate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = validate.c; sourceTree = "<group>"; };
+		E59938C714F72CB30040DA47 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
+		E59938C814F72CB30040DA47 /* find_roms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = find_roms.c; sourceTree = "<group>"; };
+		E59938CA14F72CB30040DA47 /* fpu_regs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpu_regs.h; sourceTree = "<group>"; };
+		E59938CB14F72CB30040DA47 /* lrmi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lrmi.h; sourceTree = "<group>"; };
+		E59938CC14F72CB30040DA47 /* regs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = regs.h; sourceTree = "<group>"; };
+		E59938CD14F72CB30040DA47 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		E59938CE14F72CB30040DA47 /* x86emu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86emu.h; sourceTree = "<group>"; };
+		E59938CF14F72CB30040DA47 /* xf86int10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xf86int10.h; sourceTree = "<group>"; };
+		E59938D014F72CB30040DA47 /* xf86x86emu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xf86x86emu.h; sourceTree = "<group>"; };
+		E59938D114F72CB30040DA47 /* io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = io.h; sourceTree = "<group>"; };
+		E59938D214F72CB30040DA47 /* load_roms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = load_roms.c; sourceTree = "<group>"; };
+		E59938D314F72CB30040DA47 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		E59938D414F72CB30040DA47 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		E59938D514F72CB30040DA47 /* net.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = net.c; sourceTree = "<group>"; };
+		E59938D614F72CB30040DA47 /* netlog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = netlog.c; sourceTree = "<group>"; };
+		E59938D814F72CB30040DA47 /* elilo-vesa.patch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "elilo-vesa.patch"; sourceTree = "<group>"; };
+		E59938D914F72CB30040DA47 /* kernel-vgacons.patch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "kernel-vgacons.patch"; sourceTree = "<group>"; };
+		E59938DA14F72CB30040DA47 /* pci.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pci.c; sourceTree = "<group>"; };
+		E59938DB14F72CB30040DA47 /* pci.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pci.h; sourceTree = "<group>"; };
+		E59938DC14F72CB30040DA47 /* project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = project.h; sourceTree = "<group>"; };
+		E59938DD14F72CB30040DA47 /* prototypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prototypes.h; sourceTree = "<group>"; };
+		E59938DE14F72CB30040DA47 /* pxe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pxe.c; sourceTree = "<group>"; };
+		E59938DF14F72CB30040DA47 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		E59938E014F72CB30040DA47 /* roms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = roms.c; sourceTree = "<group>"; };
+		E59938E114F72CB30040DA47 /* roms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = roms.h; sourceTree = "<group>"; };
+		E59938E214F72CB30040DA47 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		E59938E414F72CB30040DA47 /* thunk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thunk.c; sourceTree = "<group>"; };
+		E59938E514F72CB30040DA47 /* vbetool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vbetool.c; sourceTree = "<group>"; };
+		E59938E614F72CB30040DA47 /* vbetool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vbetool.h; sourceTree = "<group>"; };
+		E59938E714F72CB30040DA47 /* x86-common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "x86-common.c"; sourceTree = "<group>"; };
+		E59938E814F72CB30040DA47 /* x86-common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "x86-common.h"; sourceTree = "<group>"; };
+		E59938EA14F72CB30040DA47 /* debug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = debug.c; sourceTree = "<group>"; };
+		E59938EB14F72CB30040DA47 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		E59938EC14F72CB30040DA47 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
+		E59938ED14F72CB30040DA47 /* decode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decode.h; sourceTree = "<group>"; };
+		E59938EE14F72CB30040DA47 /* fpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fpu.c; sourceTree = "<group>"; };
+		E59938EF14F72CB30040DA47 /* fpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpu.h; sourceTree = "<group>"; };
+		E59938F014F72CB30040DA47 /* fpu_regs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpu_regs.h; sourceTree = "<group>"; };
+		E59938F114F72CB30040DA47 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E59938F214F72CB30040DA47 /* ops.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ops.c; sourceTree = "<group>"; };
+		E59938F314F72CB30040DA47 /* ops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ops.h; sourceTree = "<group>"; };
+		E59938F414F72CB30040DA47 /* ops2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ops2.c; sourceTree = "<group>"; };
+		E59938F514F72CB30040DA47 /* prim_asm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prim_asm.h; sourceTree = "<group>"; };
+		E59938F614F72CB30040DA47 /* prim_ops.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prim_ops.c; sourceTree = "<group>"; };
+		E59938F714F72CB30040DA47 /* prim_ops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prim_ops.h; sourceTree = "<group>"; };
+		E59938F814F72CB30040DA47 /* regs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = regs.h; sourceTree = "<group>"; };
+		E59938F914F72CB30040DA47 /* sys.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sys.c; sourceTree = "<group>"; };
+		E59938FA14F72CB30040DA47 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		E59938FB14F72CB30040DA47 /* validate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = validate.c; sourceTree = "<group>"; };
+		E59938FC14F72CB30040DA47 /* x86emu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86emu.h; sourceTree = "<group>"; };
+		E59938FD14F72CB30040DA47 /* x86emui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86emui.h; sourceTree = "<group>"; };
+		E59938FF14F72CB30040DA47 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		E599390014F72CB30040DA47 /* decode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decode.h; sourceTree = "<group>"; };
+		E599390114F72CB30040DA47 /* fpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpu.h; sourceTree = "<group>"; };
+		E599390214F72CB30040DA47 /* fpu_regs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpu_regs.h; sourceTree = "<group>"; };
+		E599390314F72CB30040DA47 /* ops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ops.h; sourceTree = "<group>"; };
+		E599390414F72CB30040DA47 /* prim_asm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prim_asm.h; sourceTree = "<group>"; };
+		E599390514F72CB30040DA47 /* prim_ops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prim_ops.h; sourceTree = "<group>"; };
+		E599390614F72CB30040DA47 /* prim_x86_gcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prim_x86_gcc.h; sourceTree = "<group>"; };
+		E599390714F72CB30040DA47 /* regs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = regs.h; sourceTree = "<group>"; };
+		E599390814F72CB30040DA47 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		E599390914F72CB30040DA47 /* x86emui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86emui.h; sourceTree = "<group>"; };
+		E599390A14F72CB30040DA47 /* x86emu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x86emu.h; sourceTree = "<group>"; };
+		E599390C14F72CB30040DA47 /* EfiFirmwareVolumeHeader1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfiFirmwareVolumeHeader1.h; sourceTree = "<group>"; };
+		E599390D14F72CB30040DA47 /* EFIUpdateReleaseDxe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = EFIUpdateReleaseDxe.c; sourceTree = "<group>"; };
+		E599390E14F72CB30040DA47 /* EFIUpdateReleaseDxe.inf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFIUpdateReleaseDxe.inf; sourceTree = "<group>"; };
+		E599390F14F72CB30040DA47 /* EfiVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfiVariable.h; sourceTree = "<group>"; };
+		E599391114F72CB30040DA47 /* GOPSetRes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GOPSetRes.c; sourceTree = "<group>"; };
+		E599391214F72CB30040DA47 /* GOPSetRes.inf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GOPSetRes.inf; sourceTree = "<group>"; };
+		E599391514F72CB30040DA47 /* TianoDecompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TianoDecompress.h; sourceTree = "<group>"; };
+		E599391614F72CB30040DA47 /* ShEfiPkg.dec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShEfiPkg.dec; sourceTree = "<group>"; };
+		E599391714F72CB30040DA47 /* ShEfiPkg.dsc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShEfiPkg.dsc; sourceTree = "<group>"; };
+		E599391814F72CB30040DA47 /* ShEfiPkg.fdf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShEfiPkg.fdf; sourceTree = "<group>"; };
+		E599391914F72E4A0040DA47 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		E599389E14F72C500040DA47 = {
 			isa = PBXGroup;
 			children = (
+				E599391914F72E4A0040DA47 /* build.sh */,
+				E59938AB14F72CB30040DA47 /* EFIInstallEdidOverride */,
+				E59938AE14F72CB30040DA47 /* EFISetVGARegs */,
+				E59938B314F72CB30040DA47 /* EFISetVGARegsDxe */,
+				E599390B14F72CB30040DA47 /* EFIUpdateReleaseDxe */,
+				E599391014F72CB30040DA47 /* GOPSetRes */,
+				E599391314F72CB30040DA47 /* Include */,
+				E599391614F72CB30040DA47 /* ShEfiPkg.dec */,
+				E599391714F72CB30040DA47 /* ShEfiPkg.dsc */,
+				E599391814F72CB30040DA47 /* ShEfiPkg.fdf */,
 			);
+			sourceTree = "<group>";
+		};
+		E59938AB14F72CB30040DA47 /* EFIInstallEdidOverride */ = {
+			isa = PBXGroup;
+			children = (
+				E59938AC14F72CB30040DA47 /* EFIInstallEdidOverride.c */,
+				E59938AD14F72CB30040DA47 /* EFIInstallEdidOverride.inf */,
+			);
+			path = EFIInstallEdidOverride;
+			sourceTree = "<group>";
+		};
+		E59938AE14F72CB30040DA47 /* EFISetVGARegs */ = {
+			isa = PBXGroup;
+			children = (
+				E59938AF14F72CB30040DA47 /* EFISetVGARegs.c */,
+				E59938B014F72CB30040DA47 /* EFISetVGARegs.h */,
+				E59938B114F72CB30040DA47 /* EFISetVGARegs.inf */,
+				E59938B214F72CB30040DA47 /* FirmwareVolume.h */,
+			);
+			path = EFISetVGARegs;
+			sourceTree = "<group>";
+		};
+		E59938B314F72CB30040DA47 /* EFISetVGARegsDxe */ = {
+			isa = PBXGroup;
+			children = (
+				E59938B414F72CB30040DA47 /* DevicePath.h */,
+				E59938B514F72CB30040DA47 /* DevicePathToText.c */,
+				E59938B614F72CB30040DA47 /* DevicePathToText.h */,
+				E59938B714F72CB30040DA47 /* EFISetVGARegsDxe.c */,
+				E59938B814F72CB30040DA47 /* EFISetVGARegsDxe.h */,
+				E59938B914F72CB30040DA47 /* EFISetVGARegsDxe.inf */,
+				E59938BA14F72CB30040DA47 /* FirmwareVolume.h */,
+				E59938BB14F72CB30040DA47 /* ShadowOptionRom.c */,
+				E59938BC14F72CB30040DA47 /* ShadowOptionRom.h */,
+				E59938BD14F72CB30040DA47 /* x86emu */,
+			);
+			path = EFISetVGARegsDxe;
+			sourceTree = "<group>";
+		};
+		E59938BD14F72CB30040DA47 /* x86emu */ = {
+			isa = PBXGroup;
+			children = (
+				E59938BE14F72CB30040DA47 /* debug.c */,
+				E59938BF14F72CB30040DA47 /* decode.c */,
+				E59938C014F72CB30040DA47 /* fpu.c */,
+				E59938C114F72CB30040DA47 /* ops.c */,
+				E59938C214F72CB30040DA47 /* ops2.c */,
+				E59938C314F72CB30040DA47 /* prim_ops.c */,
+				E59938C414F72CB30040DA47 /* sys.c */,
+				E59938C514F72CB30040DA47 /* validate.c */,
+				E59938C614F72CB30040DA47 /* vga */,
+				E59938FE14F72CB30040DA47 /* x86emu */,
+				E599390A14F72CB30040DA47 /* x86emu.h */,
+			);
+			path = x86emu;
+			sourceTree = "<group>";
+		};
+		E59938C614F72CB30040DA47 /* vga */ = {
+			isa = PBXGroup;
+			children = (
+				E59938C714F72CB30040DA47 /* crc32.c */,
+				E59938C814F72CB30040DA47 /* find_roms.c */,
+				E59938C914F72CB30040DA47 /* include */,
+				E59938D114F72CB30040DA47 /* io.h */,
+				E59938D214F72CB30040DA47 /* load_roms.c */,
+				E59938D314F72CB30040DA47 /* main.c */,
+				E59938D414F72CB30040DA47 /* Makefile */,
+				E59938D514F72CB30040DA47 /* net.c */,
+				E59938D614F72CB30040DA47 /* netlog.c */,
+				E59938D714F72CB30040DA47 /* patches */,
+				E59938DA14F72CB30040DA47 /* pci.c */,
+				E59938DB14F72CB30040DA47 /* pci.h */,
+				E59938DC14F72CB30040DA47 /* project.h */,
+				E59938DD14F72CB30040DA47 /* prototypes.h */,
+				E59938DE14F72CB30040DA47 /* pxe.c */,
+				E59938DF14F72CB30040DA47 /* README */,
+				E59938E014F72CB30040DA47 /* roms.c */,
+				E59938E114F72CB30040DA47 /* roms.h */,
+				E59938E214F72CB30040DA47 /* util.c */,
+				E59938E314F72CB30040DA47 /* vbetool */,
+				E59938E914F72CB30040DA47 /* x86emu */,
+			);
+			path = vga;
+			sourceTree = "<group>";
+		};
+		E59938C914F72CB30040DA47 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				E59938CA14F72CB30040DA47 /* fpu_regs.h */,
+				E59938CB14F72CB30040DA47 /* lrmi.h */,
+				E59938CC14F72CB30040DA47 /* regs.h */,
+				E59938CD14F72CB30040DA47 /* types.h */,
+				E59938CE14F72CB30040DA47 /* x86emu.h */,
+				E59938CF14F72CB30040DA47 /* xf86int10.h */,
+				E59938D014F72CB30040DA47 /* xf86x86emu.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		E59938D714F72CB30040DA47 /* patches */ = {
+			isa = PBXGroup;
+			children = (
+				E59938D814F72CB30040DA47 /* elilo-vesa.patch */,
+				E59938D914F72CB30040DA47 /* kernel-vgacons.patch */,
+			);
+			path = patches;
+			sourceTree = "<group>";
+		};
+		E59938E314F72CB30040DA47 /* vbetool */ = {
+			isa = PBXGroup;
+			children = (
+				E59938E414F72CB30040DA47 /* thunk.c */,
+				E59938E514F72CB30040DA47 /* vbetool.c */,
+				E59938E614F72CB30040DA47 /* vbetool.h */,
+				E59938E714F72CB30040DA47 /* x86-common.c */,
+				E59938E814F72CB30040DA47 /* x86-common.h */,
+			);
+			path = vbetool;
+			sourceTree = "<group>";
+		};
+		E59938E914F72CB30040DA47 /* x86emu */ = {
+			isa = PBXGroup;
+			children = (
+				E59938EA14F72CB30040DA47 /* debug.c */,
+				E59938EB14F72CB30040DA47 /* debug.h */,
+				E59938EC14F72CB30040DA47 /* decode.c */,
+				E59938ED14F72CB30040DA47 /* decode.h */,
+				E59938EE14F72CB30040DA47 /* fpu.c */,
+				E59938EF14F72CB30040DA47 /* fpu.h */,
+				E59938F014F72CB30040DA47 /* fpu_regs.h */,
+				E59938F114F72CB30040DA47 /* LICENSE */,
+				E59938F214F72CB30040DA47 /* ops.c */,
+				E59938F314F72CB30040DA47 /* ops.h */,
+				E59938F414F72CB30040DA47 /* ops2.c */,
+				E59938F514F72CB30040DA47 /* prim_asm.h */,
+				E59938F614F72CB30040DA47 /* prim_ops.c */,
+				E59938F714F72CB30040DA47 /* prim_ops.h */,
+				E59938F814F72CB30040DA47 /* regs.h */,
+				E59938F914F72CB30040DA47 /* sys.c */,
+				E59938FA14F72CB30040DA47 /* types.h */,
+				E59938FB14F72CB30040DA47 /* validate.c */,
+				E59938FC14F72CB30040DA47 /* x86emu.h */,
+				E59938FD14F72CB30040DA47 /* x86emui.h */,
+			);
+			path = x86emu;
+			sourceTree = "<group>";
+		};
+		E59938FE14F72CB30040DA47 /* x86emu */ = {
+			isa = PBXGroup;
+			children = (
+				E59938FF14F72CB30040DA47 /* debug.h */,
+				E599390014F72CB30040DA47 /* decode.h */,
+				E599390114F72CB30040DA47 /* fpu.h */,
+				E599390214F72CB30040DA47 /* fpu_regs.h */,
+				E599390314F72CB30040DA47 /* ops.h */,
+				E599390414F72CB30040DA47 /* prim_asm.h */,
+				E599390514F72CB30040DA47 /* prim_ops.h */,
+				E599390614F72CB30040DA47 /* prim_x86_gcc.h */,
+				E599390714F72CB30040DA47 /* regs.h */,
+				E599390814F72CB30040DA47 /* types.h */,
+				E599390914F72CB30040DA47 /* x86emui.h */,
+			);
+			path = x86emu;
+			sourceTree = "<group>";
+		};
+		E599390B14F72CB30040DA47 /* EFIUpdateReleaseDxe */ = {
+			isa = PBXGroup;
+			children = (
+				E599390C14F72CB30040DA47 /* EfiFirmwareVolumeHeader1.h */,
+				E599390D14F72CB30040DA47 /* EFIUpdateReleaseDxe.c */,
+				E599390E14F72CB30040DA47 /* EFIUpdateReleaseDxe.inf */,
+				E599390F14F72CB30040DA47 /* EfiVariable.h */,
+			);
+			path = EFIUpdateReleaseDxe;
+			sourceTree = "<group>";
+		};
+		E599391014F72CB30040DA47 /* GOPSetRes */ = {
+			isa = PBXGroup;
+			children = (
+				E599391114F72CB30040DA47 /* GOPSetRes.c */,
+				E599391214F72CB30040DA47 /* GOPSetRes.inf */,
+			);
+			path = GOPSetRes;
+			sourceTree = "<group>";
+		};
+		E599391314F72CB30040DA47 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				E599391414F72CB30040DA47 /* Protocol */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		E599391414F72CB30040DA47 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E599391514F72CB30040DA47 /* TianoDecompress.h */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
