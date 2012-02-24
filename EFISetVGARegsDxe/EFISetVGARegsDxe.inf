@@ -55,4 +55,11 @@
 	gEfiVTUTF8Guid                          #CONSUMES, required for DevicePathToText
 
 [Depex]
-	gEfiLegacyBiosProtocolGuid
+	gEfiPciRootBridgeIoProtocolGuid AND
+	gEfiLoadFileProtocolGuid        AND
+	gEfiPciIoProtocolGuid           AND
+	gEfiGraphicsOutputProtocolGuid  AND
+	gEfiTianoDecompressProtocolGuid AND
+#	gEfiLegacyBiosProtocolGuid      AND
+#	gEfiLegacy8259ProtocolGuid
+	gEfiLegacyRegionProtocolGuid

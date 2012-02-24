@@ -1,6 +1,9 @@
-#include <Protocol/FirmwareVolumeBlock.h>
-#include <EfiFirmwareVolume.h>
-#include <EfiFirmwareVolumeHeader.h>
+#include <Protocol/FrameworkFirmwareVolumeBlock.h>
+#include <Protocol/FirmwareVolume.h>
+///Since we're in PI1.0 mode (EFI 1.10),
+///we have special capabilities that are
+///no longer documented in FirmwareVolume.h
+#include <EfiFirmwareVolumeHeader1.h>
 #include <EfiVariable.h>
 
 
@@ -30,6 +33,7 @@ EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL *ConOut;
 ///Don't want to use the Print
 ///function from the UEFILib
 ///Just have a clean implementation
+///TODO: Add our own SPrintF implementation
 ///
 void Print(IN CHAR16 *String){
 	if (AtRuntime == FALSE){
@@ -44,33 +48,17 @@ void Print(IN CHAR16 *String){
 ///and it doesn't check if it's valid.
 ///
 EFI_STATUS GetVariableStore(){
-	EFI_GUID                            gFrameworkEfiFirmwareVolumeBlockProtocolGuid;
-	EFI_HANDLE                         *HandleBuffer;
-	UINTN                               BufferSize;
-	EFI_FIRMWARE_VOLUME_BLOCK_PROTOCOL *FVBlock;
-	EFI_FIRMWARE_VOLUME_HEADER         *FVHeader;
-	UINTN                               FVHeaderSize;
-	UINTN                               FVAlignment;
-	EFI_PHYSICAL_ADDRESS                FVBAddress;
-	EFI_FVB_ATTRIBUTES                  FVAttributes;
-	EFI_TPL                             PreviousPriority;
-	UINTN                               Index;
-	UINTN                               i;
-	
-	///
-	///Set the gFrameworkEfiFirmwareVolumeBlockProtocolGuid
-	///
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data1=0xDE28BC59;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data2=    0x6228;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data3=    0x41BD;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data4[0]=   0xBD;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data4[1]=   0xF6;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data4[2]=   0xA3;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data4[3]=   0xB9;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data4[4]=   0xAD;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data4[5]=   0xB5;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data4[6]=   0x8D;
-	gFrameworkEfiFirmwareVolumeBlockProtocolGuid.Data4[7]=   0xA1;
+	EFI_HANDLE                                    *HandleBuffer;
+	UINTN                                          BufferSize;
+	FRAMEWORK_EFI_FIRMWARE_VOLUME_BLOCK_PROTOCOL  *FVBlock;
+	EFI_FIRMWARE_VOLUME_HEADER                    *FVHeader;
+	UINTN                                          FVHeaderSize;
+	UINTN                                          FVAlignment;
+	EFI_PHYSICAL_ADDRESS                           FVBAddress;
+	EFI_FVB_ATTRIBUTES                             FVAttributes;
+	EFI_TPL                                        PreviousPriority;
+	UINTN                                          Index;
+	UINTN                                          i;
 	
 	///
 	///Find all the firmware volume block protocols
@@ -132,13 +120,15 @@ EFI_STATUS GetVariableStore(){
 		
 		///FileSystemGuid: gEfiSystemNvDataFvGuid
 		///{ 0xFFF12B8D, 0x7696, 0x4C8B, { 0xA9, 0x85, 0x27, 0x47, 0x07, 0x5B, 0x4F, 0x50 }}
+		///TODO: Write a EfiCompareGuid function and compare to gEfiSysteNvDataFvGuid
+		///TODO: Also check the Signature in the Header
 		if ((FVHeader->FileSystemGuid.Data1==0xFFF12B8D)&(FVHeader->FileSystemGuid.Data2==0x7696)&(FVHeader->FileSystemGuid.Data3==0x4C8B)) {
 			VSHeader=(VOID *)((UINTN)FVHeader+FVHeaderSize);
 			if(((UINTN)VSHeader-(UINTN)FVHeader)%8!=0){
 				VSHeader=(VOID *)(UINTN)((((UINTN)VSHeader-(UINTN)FVHeader)/8 + 1) * 8 + (UINTN)FVHeader);
 			}
 		}
-
+		
 		///
 		///And finally, close the Firmware Volume Block
 		///
@@ -188,19 +178,19 @@ UINTN GetMaxVariableSize(){
 	MyGuid.Data4[5]=   0xBD;
 	MyGuid.Data4[6]=   0x21;
 	MyGuid.Data4[7]=   0x19;
-
+	
 	MaxVariableSize=0;
 	MaxVariableSizeSize=sizeof(UINTN);
 	
 	///Delete the test variable if it exists
 	Status=RS->SetVariable(L"TestVar", &MyGuid, EFI_VARIABLE_NON_VOLATILE | EFI_VARIABLE_BOOTSERVICE_ACCESS | EFI_VARIABLE_RUNTIME_ACCESS, 0, NULL);
-
+	
 	///
 	///Check if we have a cached value from a previous run.
 	///
 	Status = RS->GetVariable(L"MaxVariableSize", &MyGuid, NULL, &MaxVariableSizeSize, &MaxVariableSize);
 	if (!EFI_ERROR (Status)) { return MaxVariableSize; };
-
+	
 	///
 	///Let's see which power of 2 variable
 	///size is too big. Gotta love binary searches.
@@ -215,7 +205,7 @@ UINTN GetMaxVariableSize(){
 		Status=RS->SetVariable(L"TestVar", &MyGuid, EFI_VARIABLE_NON_VOLATILE | EFI_VARIABLE_BOOTSERVICE_ACCESS | EFI_VARIABLE_RUNTIME_ACCESS, 0, NULL);
 		BS->FreePool(Data);
 	}
-
+	
 	Mid = 0x1ll<<(IndexMax-1);
 	End = Max;
 	while (Mid<End) {
@@ -247,7 +237,7 @@ BOOLEAN IsValidVariableHeader (IN VARIABLE_HEADER *Variable) {
 	if (Variable == NULL || Variable->StartId != VARIABLE_DATA) {
 		return FALSE;
 	}
-
+	
 	return TRUE;
 }
 
@@ -469,7 +459,8 @@ VOID EFIAPI VariableClassAddressChangeEvent (IN EFI_EVENT Event, IN VOID *Contex
 	RS->ConvertPointer (0x0, (VOID **) &OrigSetVariable);
 	RS->ConvertPointer (0x0, (VOID **) &OrigGetNextVariableName);
 	RS->ConvertPointer (0x0, (VOID **) &RS);
-	///Add CRC32 recalculation of the RS header
+	///TODO: Add CRC32 recalculation of the RS header
+	///Fixme: Figure Out which pointers need converting
 }
 
 
@@ -506,25 +497,25 @@ EFI_STATUS EfiSetVersion(IN UINT32 revision, IN UINT32 version) {
 	NewRS->SetWakeupTime             = RS->SetWakeupTime;
 	NewRS->SetVirtualAddressMap      = RS->SetVirtualAddressMap;
 	NewRS->ConvertPointer            = RS->ConvertPointer;
-	NewRS->GetVariable               = RTGetVariable;
-	NewRS->GetNextVariableName       = RTGetNextVariableName;
+	NewRS->GetVariable               = RS->GetVariable;
+	NewRS->GetNextVariableName       = RS->GetNextVariableName;
 	NewRS->SetVariable               = RTSetVariable;
 	NewRS->GetNextHighMonotonicCount = RS->GetNextHighMonotonicCount;
 	NewRS->ResetSystem               = RS->ResetSystem;
 	NewRS->UpdateCapsule             = RS->UpdateCapsule;
 	NewRS->QueryCapsuleCapabilities  = RS->QueryCapsuleCapabilities;
 	NewRS->QueryVariableInfo         = RTQueryVariableInfo;
-
+	
 	ST->RuntimeServices=NewRS;
 	RS=NewRS;
-
+	
 	//Change EFI Version to 2.10 or whatever you want it to say
 	ST->Hdr.Revision=((revision << 16) | version);
 	
 	//Change the CRC32 Value to 0 in order to recalculate it
 	ST->Hdr.CRC32=0;
 	RS->Hdr.CRC32=0;
-		
+	
 	//Calculate the new CRC32 Value
 	Status=BS->CalculateCrc32 (ST, ST->Hdr.HeaderSize, (VOID *) &ST->Hdr.CRC32);
 	Status=BS->CalculateCrc32 (RS, RS->Hdr.HeaderSize, (VOID *) &RS->Hdr.CRC32);
@@ -538,7 +529,7 @@ EFI_STATUS EfiSetVersion(IN UINT32 revision, IN UINT32 version) {
 ///int main (int argc, char *argv[]){ return 0;}
 ///
 EFI_STATUS EFIAPI DxeMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE  *SystemTable) {
-
+	
 	///We're going to need these...
 	ST = SystemTable;
 	BS = SystemTable->BootServices;
@@ -549,7 +540,7 @@ EFI_STATUS EFIAPI DxeMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE  *Syste
 	OrigGetVariable=OldRS->GetVariable;
 	OrigSetVariable=OldRS->SetVariable;
 	OrigGetNextVariableName=OldRS->GetNextVariableName;
-
+	
 	///Required for "Print"
 	ConOut=ST->ConOut;
 	AtRuntime = FALSE;

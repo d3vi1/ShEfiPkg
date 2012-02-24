@@ -11,11 +11,16 @@
 	
 
 [Packages]
+	ShEfiPkg/ShEfiPkg.dec
 	MdePkg/MdePkg.dec
-	MdeModulePkg/MdeModulePkg.dec
+	IntelFrameworkPkg/IntelFrameworkPkg.dec #CONSUMES gFrameworkEfiFirmwareVolumeBlockProtocolGuid
+#	MdeModulePkg/MdeModulePkg.dec
+
+[Protocols]
+	gFrameworkEfiFirmwareVolumeBlockProtocolGuid
 
 [LibraryClasses]
 	UefiDriverEntryPoint
-  
+
 [Depex]
 	TRUE

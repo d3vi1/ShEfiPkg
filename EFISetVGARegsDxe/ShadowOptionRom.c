@@ -1,7 +1,7 @@
 #include <ShadowOptionRom.h>
 
 ///Stuff imported from EFISetVGARegsDxe.c
-extern EFI_VIDEO_CARD   *MyVideoCards;
+extern EFI_VIDEO_CARD          *MyVideoCards;
 extern UINTN                    NumberVideoCards;
 extern EFI_HANDLE               ImageHandle;
 extern EFI_BOOT_SERVICES       *BS;
