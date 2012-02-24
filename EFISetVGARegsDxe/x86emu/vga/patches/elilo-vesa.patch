@@ -1,0 +1,34 @@
+diff -uNr elilo-3.6-orig/ia32/system.c elilo-3.6/ia32/system.c
+--- elilo-3.6-orig/ia32/system.c	2005-12-01 21:42:59.000000000 +0000
++++ elilo-3.6/ia32/system.c	2006-05-27 19:31:27.000000000 +0100
+@@ -488,6 +488,11 @@
+ 	bp->s.vesa_seg = 0;
+ 	bp->s.vesa_off = 0;
+ 
++	{
++	extern void vesa_vbe_init(boot_params_t *);
++	vesa_vbe_init(bp);
++ 	}
++
+ 	/*
+ 	 * Get memory map description and cookie for ExitBootServices()
+ 	 */
+--- elilo-3.6-orig/Makefile	2006-05-27 19:55:33.000000000 +0100
++++ elilo-3.6/Makefile	2006-05-27 19:56:07.000000000 +0100
+@@ -61,11 +61,14 @@
+ FILES = elilo.o getopt.o strops.o loader.o \
+         fileops.o util.o vars.o alloc.o chooser.o  \
+ 	config.o initrd.o alternate.o bootparams.o \
+-	gunzip.o fs/fs.o \
++	gunzip.o power_up.o text.o fs/fs.o \
+ 	choosers/choosers.o \
+ 	devschemes/devschemes.o \
+ 	$(ARCH)/sysdeps.o \
+-	$(FILESYSTEMS)
++	$(FILESYSTEMS) 
++
++SUBDIRS += vesa
++FILES += vesa/vesa.o
+ 
+ TARGETS = elilo.efi
+ 

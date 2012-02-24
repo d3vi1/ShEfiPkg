@@ -1,0 +1,65 @@
+[Defines]
+	INF_VERSION                    = 0x00010005
+	BASE_NAME                      = EFISetVGARegsDxe
+	FILE_GUID                      = da20fb58-ab74-4ff2-ba2f-5517a2e39f0f
+	MODULE_TYPE                    = DXE_DRIVER
+	VERSION_STRING                 = 1.0
+	ENTRY_POINT                    = DxeMain
+
+[Sources]
+	EFISetVGARegsDxe.c
+	DevicePathToText.c
+	ShadowOptionRom.c
+	x86emu/ops.c
+	x86emu/sys.c
+ 	x86emu/debug.c
+	x86emu/decode.c
+	x86emu/fpu.c
+	x86emu/ops2.c
+	x86emu/ops.c
+	x86emu/prim_ops.c
+	x86emu/sys.c
+	x86emu/x86emu.h//	LegacyBiosThunk.c
+
+[Packages]
+	MdePkg/MdePkg.dec
+	MdeModulePkg/MdeModulePkg.dec
+	IntelFrameworkPkg/IntelFrameworkPkg.dec #CONSUMES the gEfiLegacyBiosProtocolGuid
+	ShEfiPkg/ShEfiPkg.dec
+
+[LibraryClasses]
+	UefiDriverEntryPoint
+	UefiLib
+	DevicePathLib
+
+[Protocols]
+	gEfiPciRootBridgeIoProtocolGuid         #CONSUMES, required for setting PCI registers
+	gEfiLoadedImageProtocolGuid             #CONSUMES, required for getting the volume that I was booted from
+	gEfiSimpleFileSystemProtocolGuid        #CONSUMES, required for loading files and chainloading the bootloader
+	gEfiDevicePathProtocolGuid              #CONSUMES, required for identifying the children of the handle
+	gEfiLoadFileProtocolGuid                #CONSUMES, required for loading files and chainloading the bootloader
+	gEfiPciIoProtocolGuid                   #CONSUMES, required for setting the VGA registers
+	gEfiGraphicsOutputProtocolGuid          #CONSUMES, required for identifying the cards
+	gEfiTianoDecompressProtocolGuid         #CONSUMES, might work for decompressing images
+	gEfiLegacyBiosProtocolGuid              #CONSUMES, for post-ing the VGA BIOS
+	gEfiLegacy8259ProtocolGuid              #CONSUMES, for post-ing the VGA BIOS
+	gEfiDebugPortProtocolGuid               #CONSUMES, required for DevicePathToText
+
+[Guids]
+	gEfiFileInfoGuid                        #CONSUMES
+	gEfiSasDevicePathGuid                   #CONSUMES, required for DevicePathToText
+	gEfiPcAnsiGuid                          #CONSUMES, required for DevicePathToText
+	gEfiVT100PlusGuid                       #CONSUMES, required for DevicePathToText
+	gEfiVT100Guid                           #CONSUMES, required for DevicePathToText
+	gEfiUartDevicePathGuid                  #CONSUMES, required for DevicePathToText
+	gEfiVTUTF8Guid                          #CONSUMES, required for DevicePathToText
+
+[Depex]
+	gEfiPciRootBridgeIoProtocolGuid AND
+	gEfiLoadFileProtocolGuid        AND
+	gEfiPciIoProtocolGuid           AND
+	gEfiGraphicsOutputProtocolGuid  AND
+	gEfiTianoDecompressProtocolGuid AND
+#	gEfiLegacyBiosProtocolGuid      AND
+#	gEfiLegacy8259ProtocolGuid
+	gEfiLegacyRegionProtocolGuid

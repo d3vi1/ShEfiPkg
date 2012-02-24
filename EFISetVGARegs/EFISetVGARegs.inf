@@ -1,0 +1,32 @@
+[Defines]
+	INF_VERSION                    = 0x00010005
+	BASE_NAME                      = EFISetVGARegs
+	FILE_GUID                      = c4b62fc8-0a8f-43d4-a0c0-c3d6c5d8b85b
+	MODULE_TYPE                    = UEFI_APPLICATION
+	VERSION_STRING                 = 1.0
+	ENTRY_POINT                    = UefiMain
+
+[Sources]
+	EFISetVGARegs.c
+
+[Packages]
+	MdePkg/MdePkg.dec
+	MdeModulePkg/MdeModulePkg.dec
+	ShEfiPkg/ShEfiPkg.dec
+
+[LibraryClasses]
+	BaseMemoryLib
+	DevicePathLib
+	UefiLib
+	UefiApplicationEntryPoint
+
+[Protocols]
+	gEfiLoadedImageProtocolGuid            #CONSUMES, required for getting the volume that I was booted from
+	gEfiSimpleFileSystemProtocolGuid       #CONSUMES, required for loading files and chainloading the bootloader
+	gEfiDevicePathProtocolGuid             #CONSUMES, required for identifying the children of the handle
+	gEfiLoadFileProtocolGuid               #CONSUMES, required for loading files and chainloading the bootloader
+	gEfiTianoDecompressProtocolGuid        #CONSUMES, required for parsing the Firmware Volumes Sections
+//	gEfiFileProtocolGuid                   #CONSUMES, required for loading files
+
+[Guids]
+	gEfiFileInfoGuid                       #CONSUMES, required for determining the file size

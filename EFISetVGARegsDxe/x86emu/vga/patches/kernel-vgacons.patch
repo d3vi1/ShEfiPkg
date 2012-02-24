@@ -1,0 +1,28 @@
+--- linux-2.6.16.1/arch/i386/kernel/setup.c	2006-03-28 07:49:02.000000000 +0100
++++ linux-2.6.16.1-imac-sky2-rtc/arch/i386/kernel/setup.c	2006-05-15 03:20:52.000000000 +0100
+@@ -1510,6 +1510,8 @@
+ 		efi_enabled = 1;
+ #endif
+ 
++	conswitchp = &vga_con;
++
+  	ROOT_DEV = old_decode_dev(ORIG_ROOT_DEV);
+  	drive_info = DRIVE_INFO;
+  	screen_info = SCREEN_INFO;
+@@ -1625,12 +1627,16 @@
+ 	register_memory();
+ 
+ #ifdef CONFIG_VT
++#if 0
+ #if defined(CONFIG_VGA_CONSOLE)
+ 	if (!efi_enabled || (efi_mem_type(0xa0000) != EFI_CONVENTIONAL_MEMORY))
+ 		conswitchp = &vga_con;
+ #elif defined(CONFIG_DUMMY_CONSOLE)
+ 	conswitchp = &dummy_con;
+ #endif
++#else
++	conswitchp = &vga_con;
++#endif
+ #endif
+ }
+ 

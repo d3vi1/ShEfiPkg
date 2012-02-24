@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.1131352649">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.1131352649" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.1131352649" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1131352649." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.985134847" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.PE" id="cdt.managedbuild.targetPlatform.gnu.cross.242815965" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder arguments="-p ShEfiPkg/ShEfiPkg.dsc -a ${ArchType}" autoBuildTarget="all" buildPath="${workspace_loc:../Build/ShEfiPkg/DEBUG_GCC46/X64/}" cleanBuildTarget="clean" command="build" enableAutoBuild="false" enableCleanBuild="false" enabledIncrementalBuild="false" id="cdt.managedbuild.builder.gnu.cross.1627889391" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelizationNumber="1" superClass="cdt.managedbuild.builder.gnu.cross"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1904042787" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1681932315" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.49693116" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1464227576" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/MdePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/MdeModulePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/IntelFrameworkPkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/IntelFrameworkModulePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/BaseTools/Source/C/Include/X64"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1260101495" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1811289125" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.1277718239" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1431579485" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.223003528" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.274920178" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1487619438" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1378035975" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.903254053" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<option id="gnu.both.asm.option.include.paths.659237716" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/MdePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/MdeModulePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/IntelFrameworkPkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/IntelFrameworkModulePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/BaseTools/Source/C/Include/X64"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.582442393" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1131352649.583220693" name="/" resourcePath="EFISetVGARegsDxe/Junk">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1565098737" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.235336130" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler.1904042787">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2006065441" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.996678447" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1811289125"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1930184831" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker.223003528"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1313002129" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker.1487619438"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.907016275" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver.1378035975"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.1405218556" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler.903254053">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1960393801" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="EFISetVGARegsDxe/Junk" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.release.1466544636">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.release.1466544636" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.release.1466544636" name="Release" parent="cdt.managedbuild.config.gnu.cross.exe.release">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.release.1466544636." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.release.1910571994" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.release">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.PE" id="cdt.managedbuild.targetPlatform.gnu.cross.707434198" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder arguments="-p ShEfiPkg/ShEfiPkg.dsc -a ${ArchType} -b RELEASE" autoBuildTarget="all" buildPath="${workspace_loc:../Build/ShEfiPkg/RELEASE_GCC46/X64/}" cleanBuildTarget="clean" command="build" enableAutoBuild="false" enableCleanBuild="false" enabledIncrementalBuild="false" id="cdt.managedbuild.builder.gnu.cross.656546263" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelizationNumber="1" superClass="cdt.managedbuild.builder.gnu.cross"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.339202406" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.549143791" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.136767557" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1405149315" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/MdePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/IntelFrameworkPkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/MdeModulePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/IntelFrameworkModulePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/StdLib/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/EdkCompatibilityPkg/Foundation/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/BaseTools/Source/C/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/BaseTools/Source/C/Include/Common"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/BaseTools/Source/C/Include/X64"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1587629570" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.775922897" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.1580367318" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1301121390" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1484371331" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.426328361" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.790612782" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1946433654" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.1395118066" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<option id="gnu.both.asm.option.include.paths.497364184" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/MdePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/IntelFrameworkPkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/MdeModulePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/IntelFrameworkModulePkg/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/StdLib/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/EdkCompatibilityPkg/Foundation/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/BaseTools/Source/C/Include"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/BaseTools/Source/C/Include/Common"/>
+									<listOptionValue builtIn="false" value="/home/razvan/edk2/BaseTools/Source/C/Include/X64"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1847484865" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.release.1466544636.1087793611" name="/" resourcePath="EFISetVGARegsDxe/Junk">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.release.550663735" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.release" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.2145590482" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler.339202406">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.163189647" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.853303625" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler.775922897"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1104729737" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker.1484371331"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.785417221" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker.790612782"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.897099564" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver.1946433654"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.223075845" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler.1395118066">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1847416924" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="EFISetVGARegsDxe/Junk" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="ShEfiPkg.cdt.managedbuild.target.gnu.cross.exe.248557732" name="Executable" projectType="cdt.managedbuild.target.gnu.cross.exe"/>
+	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/ShEfiPkg"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings">
+		<doc-comment-owner id="org.eclipse.cdt.internal.ui.text.doctools.NullDocCommentOwner">
+			<path value=""/>
+		</doc-comment-owner>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1466544636;cdt.managedbuild.config.gnu.cross.exe.release.1466544636.1087793611;cdt.managedbuild.tool.gnu.cross.c.compiler.2145590482;cdt.managedbuild.tool.gnu.c.compiler.input.163189647">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.1131352649;cdt.managedbuild.config.gnu.cross.exe.debug.1131352649.583220693;cdt.managedbuild.tool.gnu.cross.c.compiler.235336130;cdt.managedbuild.tool.gnu.c.compiler.input.2006065441">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.1131352649;cdt.managedbuild.config.gnu.cross.exe.debug.1131352649.;cdt.managedbuild.tool.gnu.cross.c.compiler.1904042787;cdt.managedbuild.tool.gnu.c.compiler.input.1260101495">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1466544636;cdt.managedbuild.config.gnu.cross.exe.release.1466544636.;cdt.managedbuild.tool.gnu.cross.c.compiler.339202406;cdt.managedbuild.tool.gnu.c.compiler.input.1587629570">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+</cproject>
