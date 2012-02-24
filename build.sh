@@ -104,6 +104,11 @@ done
 echo $PATH
 echo `which build`
 build -p $WORKSPACE/ShEfiPkg/ShEfiPkg.dsc      -a X64 -t $TARGET_TOOLS -D SEC_ONLY -n 3 $1 $2 $3 $4 $5 $6 $7 $8  modules
-cp $WORKSPACE/Build/ShEfiPkg/DEBUG_"$TARGET_TOOLS"/X64/SecMain $WORKSPACE/Build/ShEfiPkg/DEBUG_"$PKG_TOOLS"/X64
+
+#
+#We don't use the EDK UNIX Emulator
+#
+#cp $WORKSPACE/Build/ShEfiPkg/DEBUG_"$TARGET_TOOLS"/X64/SecMain $WORKSPACE/Build/ShEfiPkg/DEBUG_"$PKG_TOOLS"/X64
+
 exit $?
 
