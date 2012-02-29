@@ -40,7 +40,7 @@ case `uname` in
       fi
       NETWORK_SUPPORT="-D NETWORK_SUPPORT"
       ;;
-  Linux*) TARGET_TOOLS=ELFGCC ;;
+  Linux*) TARGET_TOOLS=GCC46 ;;
 
 esac
 

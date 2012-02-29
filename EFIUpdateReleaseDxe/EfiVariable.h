@@ -88,7 +88,7 @@ typedef struct {
   UINT32    DataSize;
   EFI_GUID  VendorGuid;
 } VARIABLE_HEADER;
-
+EFI_GUID gFrameworkEfiFirmwareVolumeBlockProtocolGuid;
 #pragma pack()
 
 #endif // _EFI_VARIABLE_H_

@@ -17,7 +17,7 @@
 
 [LibraryClasses]
   UefiApplicationEntryPoint
-  UefiLib
+#  UefiLib
 
 [Protocols]
   gEfiGraphicsOutputProtocolGuid     #CONSUMES

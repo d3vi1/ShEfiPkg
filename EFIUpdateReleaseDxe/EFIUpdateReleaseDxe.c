@@ -423,15 +423,15 @@ EFI_STATUS EFIAPI RTQueryVariableInfo (IN UINT32 Attributes, OUT UINT64 *Maximum
 ///the convertPointer stuff works.
 ///
 EFI_STATUS EFIAPI RTGetNextVariableName(IN OUT UINTN *VariableNameSize, IN OUT CHAR16 *VariableName, IN OUT EFI_GUID *VendorGuid){
-	return(OrigGetNextVariableName(VariableNameSize, VariableName, VendorGuid));
+return EFI_SUCCESS;//	return(OrigGetNextVariableName(VariableNameSize, VariableName, VendorGuid));
 }
 
 EFI_STATUS EFIAPI RTGetVariable(IN CHAR16 *VariableName, IN EFI_GUID *VendorGuid, OUT UINT32 *Attributes OPTIONAL, IN OUT UINTN *DataSize, OUT VOID *Data){
-    return(OrigGetVariable(VariableName, VendorGuid, Attributes, DataSize, Data));
+return EFI_SUCCESS;//	return(OrigGetVariable(VariableName, VendorGuid, Attributes, DataSize, Data));
 }
 
 EFI_STATUS EFIAPI RTSetVariable(IN CHAR16 *VariableName, IN EFI_GUID *VendorGuid, IN UINT32 Attributes, IN UINTN DataSize, IN VOID *Data){
-	return(OrigSetVariable(VariableName, VendorGuid, Attributes, DataSize, Data));
+return EFI_SUCCESS;//	return(OrigSetVariable(VariableName, VendorGuid, Attributes, DataSize, Data));
 }
 
 
@@ -499,25 +499,27 @@ EFI_STATUS EfiSetVersion(IN UINT32 revision, IN UINT32 version) {
 	NewRS->ConvertPointer            = RS->ConvertPointer;
 	NewRS->GetVariable               = RS->GetVariable;
 	NewRS->GetNextVariableName       = RS->GetNextVariableName;
-	NewRS->SetVariable               = RTSetVariable;
+	NewRS->SetVariable               = RS->SetVariable;
 	NewRS->GetNextHighMonotonicCount = RS->GetNextHighMonotonicCount;
 	NewRS->ResetSystem               = RS->ResetSystem;
 	NewRS->UpdateCapsule             = RS->UpdateCapsule;
 	NewRS->QueryCapsuleCapabilities  = RS->QueryCapsuleCapabilities;
 	NewRS->QueryVariableInfo         = RTQueryVariableInfo;
 	
-	ST->RuntimeServices=NewRS;
+	//ST->RuntimeServices=NewRS;
 	RS=NewRS;
-	
+	OldRS->GetVariable=RTGetVariable;
+	OldRS->GetNextVariableName=RTGetNextVariableName;
+	OldRS->SetVariable=RTSetVariable;
 	//Change EFI Version to 2.10 or whatever you want it to say
-	ST->Hdr.Revision=((revision << 16) | version);
+	//ST->Hdr.Revision=((revision << 16) | version);
 	
 	//Change the CRC32 Value to 0 in order to recalculate it
-	ST->Hdr.CRC32=0;
+	//ST->Hdr.CRC32=0;
 	RS->Hdr.CRC32=0;
 	
 	//Calculate the new CRC32 Value
-	Status=BS->CalculateCrc32 (ST, ST->Hdr.HeaderSize, (VOID *) &ST->Hdr.CRC32);
+	//Status=BS->CalculateCrc32 (ST, ST->Hdr.HeaderSize, (VOID *) &ST->Hdr.CRC32);
 	Status=BS->CalculateCrc32 (RS, RS->Hdr.HeaderSize, (VOID *) &RS->Hdr.CRC32);
 	
 	return EFI_SUCCESS;
