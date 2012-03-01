@@ -2,12 +2,14 @@
 #include <Protocol/FirmwareVolume.h>
 ///Since we're in PI1.0 mode (EFI 1.10),
 ///we have special capabilities that are
-///no longer documented in FirmwareVolume.h
+///no longer provided by FirmwareVolume.h
 #include <EfiFirmwareVolumeHeader1.h>
 #include <EfiVariable.h>
 
-
+///
 ///Testing only
+///We want to see if we can browse the variables from Runtime
+///
 EFI_GET_VARIABLE                 OrigGetVariable;
 EFI_SET_VARIABLE                 OrigSetVariable;
 EFI_GET_NEXT_VARIABLE_NAME       OrigGetNextVariableName;

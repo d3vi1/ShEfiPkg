@@ -34,7 +34,7 @@ case `uname` in
         echo ShEfiPkg requires Snow Leopard or later OS
         exit 1
       else
-        TARGET_TOOLS=XCODE32
+        TARGET_TOOLS=XCODE43
         PKG_TOOLS=XCLANG
       fi
       NETWORK_SUPPORT="-D NETWORK_SUPPORT"
