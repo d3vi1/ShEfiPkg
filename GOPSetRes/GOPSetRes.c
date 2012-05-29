@@ -28,21 +28,21 @@ EFI_STATUS EFIAPI UefiMain (IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *Syst
 		BreakOut=FALSE;
 		while (!BreakOut) {   ///Intram in meniul aplicatiei pana cand cineva apasa zero (BreakOut=TRUE)
 		
-			Print(L"Current Mode: %d X %d \r\n", GraphicsOutput->Mode->Info->HorizontalResolution, GraphicsOutput->Mode->Info->VerticalResolution);
+			//Print(L"Current Mode: %d X %d \r\n", GraphicsOutput->Mode->Info->HorizontalResolution, GraphicsOutput->Mode->Info->VerticalResolution);
 			
 			
 			///Scriem meniul plimbandu-ne prin toate modurile video (in Total date de MaxMode)
 			for (Index = 0; Index < GraphicsOutput->Mode->MaxMode; Index++){
 				Status=GraphicsOutput->QueryMode(GraphicsOutput, Index, &SizeOfInfo, &InfoMode);
-				Print(L"Mode ID %d : %d X %d \r\n", (Index+1), InfoMode->HorizontalResolution, InfoMode->VerticalResolution);
+				//Print(L"Mode ID %d : %d X %d \r\n", (Index+1), InfoMode->HorizontalResolution, InfoMode->VerticalResolution);
 			};
 			
 			
 			///Si optiunea de iesire
-			Print(L"        0 : Quit\r\n");
+			//Print(L"        0 : Quit\r\n");
 			
 			///Ce vrei sa facem
-			Print(L"Select Mode:");
+			//Print(L"Select Mode:");
 			
 			
 			///Asa arata un event in C in lumea EFI
@@ -63,14 +63,14 @@ EFI_STATUS EFIAPI UefiMain (IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *Syst
 					if (MyKey == 0x30) BreakOut=TRUE; else { ///A apasat 0.
 						MyKey--; ///Din moment ce am incrementat numerele in meniu (0 nu mai e mod video ci e quit), acum trebuie sa corectam.
 						Status=GraphicsOutput->SetMode(GraphicsOutput, (MyKey-0x30));
-						if (EFI_ERROR(Status)) Print(L"Cannot set mode, did you set a number smaller than %d?\n", GraphicsOutput->Mode->MaxMode);
+						//if (EFI_ERROR(Status)) Print(L"Cannot set mode, did you set a number smaller than %d?\n", GraphicsOutput->Mode->MaxMode);
 					}
-				} else { Print(L"Non-numeric key pressed"); }
+				} //else { Print(L"Non-numeric key pressed"); }
 				
-			} else { Print(L"Non alpha-numeric key pressed"); }
+			} //else { Print(L"Non alpha-numeric key pressed"); }
 		}///While !BreakOut
 	
-	} else { Print(L"No GOP\r\n"); };
+	} //else { Print(L"No GOP\r\n"); };
 	
 	return EFI_SUCCESS;
 }
