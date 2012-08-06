@@ -201,7 +201,7 @@ EFI_STATUS EfiExecuteFirmwareFile(IN EFI_GUID *gEfiGuid) {
 		//And open them
 		Status = BS->OpenProtocol ( HandleBuffer[Index], &gEfiFirmwareVolumeProtocolGuid, (VOID *) &FirmwareVolume, ImageHandle, NULL, EFI_OPEN_PROTOCOL_BY_HANDLE_PROTOCOL);
 		if (EFI_ERROR (Status)) {  Print(L"Could not open firmware Volume number %d: %r\n", Index, Status); continue; }
-
+		
 		ImageFile = NULL;
 		ImageFileSize  = 0;
 				

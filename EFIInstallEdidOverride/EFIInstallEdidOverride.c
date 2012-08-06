@@ -39,6 +39,4 @@ EFI_STATUS EFIAPI DxeMain(IN EFI_HANDLE SelfImageHandle, IN EFI_SYSTEM_TABLE  *S
 	Private->GetEdid=GetEdid;
 
 	Status=BS->InstallProtocolInterface(ImageHandle, gEfiEdidOverrideProtocolGuid, EFI_NATIVE_INTERFACE, &Private);
-	
-	
 }

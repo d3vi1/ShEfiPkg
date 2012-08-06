@@ -5,13 +5,15 @@
 #include <Library/DevicePathLib.h>
 #include <Protocol/LoadedImage.h>
 #include <Protocol/DevicePath.h>
-#include <Protocol/TianoDecompress.h>
-#include <Protocol/GuidedSectionExtraction.h>
 #include <Protocol/SimpleFileSystem.h>
 #include <Guid/FileInfo.h>
-#include <Pi/PiDxeCis.h>    //Common Section Header
-#include <FirmwareVolume.h> //Firmware Volume Protocol
-#include <EFISetVGARegs.h>
+
+EFI_STATUS           Status;
+EFI_HANDLE           ImageHandle;
+EFI_SYSTEM_TABLE     *ST;
+EFI_BOOT_SERVICES    *BS;
+EFI_RUNTIME_SERVICES *RS;
+
 
 ///
 ///Loads an image to a Runtime buffer and executes it.
