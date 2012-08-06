@@ -8,7 +8,6 @@
 
 [Sources]
 	EFIUpdateReleaseDxe.c
-	
 
 [Packages]
 	ShEfiPkg/ShEfiPkg.dec
@@ -18,6 +17,9 @@
 
 [Protocols]
 	gFrameworkEfiFirmwareVolumeBlockProtocolGuid
+
+[Guids]
+	gEfiSystemNvDataFvGuid
 
 [LibraryClasses]
 	UefiDriverEntryPoint

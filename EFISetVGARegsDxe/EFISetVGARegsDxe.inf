@@ -61,5 +61,5 @@
 	gEfiGraphicsOutputProtocolGuid  AND
 	gEfiTianoDecompressProtocolGuid AND
 #	gEfiLegacyBiosProtocolGuid      AND
-#	gEfiLegacy8259ProtocolGuid
+#	gEfiLegacy8259ProtocolGuid      AND
 	gEfiLegacyRegionProtocolGuid

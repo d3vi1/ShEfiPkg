@@ -1,5 +1,6 @@
 #include <Protocol/FrameworkFirmwareVolumeBlock.h>
 #include <Protocol/FirmwareVolume.h>
+#include <Guid/EfiSystemNvDataFv.h>
 ///Since we're in PI1.0 mode (EFI 1.10),
 ///we have special capabilities that are
 ///no longer provided by FirmwareVolume.h
@@ -43,6 +44,25 @@ void Print(IN CHAR16 *String){
 	}
 }
 
+
+BOOLEAN EfiCompareGUID(IN EFI_GUID *FirstGUID, IN EFI_GUID *SecondGUID){
+
+	if ((FirstGUID->Data1==SecondGUID->Data2)&&
+	    (FirstGUID->Data2==SecondGUID->Data2)&&
+	    (FirstGUID->Data3==SecondGUID->Data3)&&
+	    (FirstGUID->Data4[0]==SecondGUID->Data4[0])&&
+	    (FirstGUID->Data4[1]==SecondGUID->Data4[1])&&
+	    (FirstGUID->Data4[2]==SecondGUID->Data4[2])&&
+	    (FirstGUID->Data4[3]==SecondGUID->Data4[3])&&
+	    (FirstGUID->Data4[4]==SecondGUID->Data4[4])&&
+	    (FirstGUID->Data4[5]==SecondGUID->Data4[5])&&
+	    (FirstGUID->Data4[6]==SecondGUID->Data4[6])&&
+	    (FirstGUID->Data4[7]==SecondGUID->Data4[7])){
+	    return TRUE;
+	}
+	
+	return FALSE;
+}
 
 ///
 ///Locate the freaking variable store
@@ -121,10 +141,8 @@ EFI_STATUS GetVariableStore(){
 		};
 		
 		///FileSystemGuid: gEfiSystemNvDataFvGuid
-		///{ 0xFFF12B8D, 0x7696, 0x4C8B, { 0xA9, 0x85, 0x27, 0x47, 0x07, 0x5B, 0x4F, 0x50 }}
-		///TODO: Write a EfiCompareGuid function and compare to gEfiSysteNvDataFvGuid
-		///TODO: Also check the Signature in the Header
-		if ((FVHeader->FileSystemGuid.Data1==0xFFF12B8D)&(FVHeader->FileSystemGuid.Data2==0x7696)&(FVHeader->FileSystemGuid.Data3==0x4C8B)) {
+		///TODO: Check the Signature in the Header
+		if (EfiCompareGUID(&FVHeader->FileSystemGuid, &gEfiSystemNvDataFvGuid)) {
 			VSHeader=(VOID *)((UINTN)FVHeader+FVHeaderSize);
 			if(((UINTN)VSHeader-(UINTN)FVHeader)%8!=0){
 				VSHeader=(VOID *)(UINTN)((((UINTN)VSHeader-(UINTN)FVHeader)/8 + 1) * 8 + (UINTN)FVHeader);

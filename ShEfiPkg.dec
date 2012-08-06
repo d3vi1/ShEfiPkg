@@ -7,19 +7,6 @@
 [Includes]
 	Include
 
-#[LibraryClasses]
-#	BltLib|Include/Library/BltLib.h
-
-#[PcdsFeatureFlag]
-#	gOptionRomPkgTokenSpaceGuid.PcdSupportScsiPassThru|TRUE|BOOLEAN|0x00010001
-#	gOptionRomPkgTokenSpaceGuid.PcdSupportExtScsiPassThru|TRUE|BOOLEAN|0x00010002
-#	gOptionRomPkgTokenSpaceGuid.PcdSupportGop|TRUE|BOOLEAN|0x00010004
-#	gOptionRomPkgTokenSpaceGuid.PcdSupportUga|TRUE|BOOLEAN|0x00010005
-
-#[PcdsFixedAtBuild, PcdsPatchableInModule]
-#	gOptionRomPkgTokenSpaceGuid.PcdDriverSupportedEfiVersion|0x0002000a|UINT32|0x00010003
-
-
 [Protocols]
 	gEfiTianoDecompressProtocolGuid              = { 0xE84CF29C, 0x191F, 0x4EAE, { 0x96, 0xE1, 0xF4, 0x6A, 0xEC, 0xEA, 0xEA, 0x0B }}
 	gEfiDebugPortProtocolGuid                    = { 0xEBA4E8D2, 0x3858, 0x41EC, { 0xA2, 0x81, 0x26, 0x47, 0xBA, 0x96, 0x60, 0xD0 }}

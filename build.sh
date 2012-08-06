@@ -92,10 +92,6 @@ do
     exit $?
   fi
 
-  if [[ $arg == shell ]]; then
-    build -p $WORKSPACE/GccShellPkg/GccShellPkg.dsc -a X64 -t $PKG_TOOLS -n 3 $2 $3 $4 $5 $6 $7 $8
-    exit $?
-  fi
 done
 
 
@@ -104,7 +100,7 @@ done
 #
 echo $PATH
 echo `which build`
-build -p $WORKSPACE/ShEfiPkg/ShEfiPkg.dsc      -a X64 -t $TARGET_TOOLS -D SEC_ONLY -n 3 $1 $2 $3 $4 $5 $6 $7 $8  modules
+build -p $WORKSPACE/ShEfiPkg/ShEfiPkg.dsc -b RELEASE -a X64 -t $TARGET_TOOLS -n 3 $1 $2 $3 $4 $5 $6 $7 $8
 
 #
 #We don't use the EDK UNIX Emulator
