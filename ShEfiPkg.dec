@@ -27,9 +27,22 @@
 	## IntelFrameworkPkg/Include/Protocol/FrameworkFirmwareVolumeBlock.h
 	gFrameworkEfiFirmwareVolumeBlockProtocolGuid = { 0xDE28BC59, 0x6228, 0x41BD, { 0xBD, 0xF6, 0xA3, 0xB9, 0xAD, 0xB5, 0x8D, 0xA1 }}
 
+	#gEfiLegacyBiosProtocolGuid
+
+	#gEfiLegacyBiosPlatformProtocolGuid
+
+	#gEfiLegacyRegionProtocolGuid
+
+	#gEfiLegacyRegion2ProtocolGuid
+
 [Guids]
 	## Old Framework Definitions
 	gEfiSystemNvDataFvGuid                       = { 0xFFF12B8D, 0x7696, 0x4c8b, { 0xa9, 0x85, 0x27, 0x47, 0x07, 0x5b, 0x4f, 0x50 }}
 
 	## ShMessengerLabs Guids
 	gShMessengerTokenSpaceGuid                   = { 0x6a98937E, 0xed34, 0x44eb, { 0xae, 0x97, 0x1f, 0xa5, 0xe8, 0xdb, 0x21, 0x19 }}
+
+	#gEfiLegacyBiosDxeGuid
+	#gEfiLegacyBiosPlatformDxeGuid
+	#gEfiLegacyRegionDxeGuid
+	#gEfiLegacyRegion2DxeGuid

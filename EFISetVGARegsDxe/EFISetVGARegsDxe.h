@@ -16,11 +16,11 @@
 typedef struct {
 	UINT16                                    VendorId;
 	UINT16                                    DeviceId;
- 	UINT16                                    Command;
+	UINT16                                    Command;
 	UINT16                                    Status;
- 	UINT8                                     RevisionId;
+	UINT8                                     RevisionId;
 	UINT8                                     ClassCode[3];
- 	UINT8                                     CacheLineSize;
+	UINT8                                     CacheLineSize;
 	UINT8                                     PrimaryLatencyTimer;
 	UINT8                                     HeaderType;
 	UINT8                                     BIST;

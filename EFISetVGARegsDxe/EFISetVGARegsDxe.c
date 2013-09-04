@@ -93,6 +93,17 @@ EFI_STATUS EfiWriteActiveGraphicsAdaptorPCIRegs() {
 	
 }
 
+///
+///Return TRUE if another handle is found
+///with an identical or longer DevicePath
+///that also has a GraphicsOutputProtocol
+///registered to it.
+///TODO!!!
+///
+EFI_STATUS EfiFindChildHandles(IN EFI_HANDLE DeviceHandle){
+	return EFI_SUCCESS;
+}
+
 
 ///
 ///Make a list of all the video cards.
@@ -511,5 +522,5 @@ EFI_STATUS EFIAPI DxeMain(IN EFI_HANDLE SelfImageHandle, IN EFI_SYSTEM_TABLE  *S
 	///
 	BS->FreePool (MyVideoCards);
 	
-	return EFI_SUCCESS;	
+	return EFI_SUCCESS;
 }

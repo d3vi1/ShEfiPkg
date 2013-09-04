@@ -34,6 +34,8 @@
 	ShEfiPkg/EFISetVGARegsDxe/EFISetVGARegsDxe.inf
 	ShEfiPkg/EFIUpdateReleaseDxe/EFIUpdateReleaseDxe.inf
 	ShEfiPkg/GOPSetRes/GOPSetRes.inf
+	ShEfiPkg/EFIBroadcomEditor/EFIBroadcomEditor.inf
+	ShEfiPkg/VgaMiniPortDxe/VBoxVgaMiniPortDxe.inf
 
 #DEFINE  EMULATE = 1
 
